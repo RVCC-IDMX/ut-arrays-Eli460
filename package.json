@@ -1,0 +1,32 @@
+{
+  "name": "js-arrays-test",
+  "version": "1.0.0",
+  "description": "JS unit testing",
+  "main": "index.js",
+  "scripts": {
+    "test:1": "vitest tests/arrays-01.test.js --globals --coverage --run --reporter verbose",
+    "test:2": "vitest tests/arrays-02.test.js --globals --coverage --run --reporter verbose",
+    "test:3": "vitest tests/arrays-03.test.js --globals --coverage --run --reporter verbose",
+    "test:4": "vitest tests/arrays-04.test.js --globals --coverage --run --reporter verbose",
+    "test": "cd tests & vitest --coverage --run arrays-01.test.js arrays-02.test.js arrays-03.test.js arrays-04.test.js --silent --globals "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RVCC-IDMX/js-test-1-template.git"
+  },
+  "author": "Cynthia Teeters <cynthia.teeters@raritanval.edu> (https://github.com/cynthiateeters)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RVCC-IDMX/js-test-1-template/issues"
+  },
+  "homepage": "https://github.com/RVCC-IDMX/js-test-1-template#readme",
+  "devDependencies": {
+    "@vitest/coverage-c8": "^0.23.4",
+    "@vitest/coverage-v8": "^0.34.6",
+    "@vitest/ui": "^0.34.6",
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "vitest": "^0.34.6"
+  }
+}
