@@ -1,17 +1,60 @@
 /* eslint-disable no-undef */
-const {
-  addUpArrayElements,
-  makeSquareNumbers,
-  filterForLargeWords,
-  findTheFirstEvenNumber,
-  sortCaseSensitive,
-  makeTheString,
-  reverseTheArray,
-  makeMirrorArray,
-  dropRight,
-  dropLeft,
-  checkArrayForValue,
-} = require('../src/arrays-03');
+
+require('../src/arrays-03');
+
+function addUpArrayElements(arr) {
+  return arr.reduce((total, num) => total + num, 0);
+}
+
+// Solution for makeSquareNumbers
+function makeSquareNumbers(arr) {
+  return arr.map((num) => num * num);
+}
+
+// Solution for filterForLargeWords
+function filterForLargeWords(arr, minSize) {
+  return arr.filter((word) => word.length > minSize);
+}
+
+// Solution for findTheFirstEvenNumber
+function findTheFirstEvenNumber(arr) {
+  return arr.find((num) => num % 2 === 0);
+}
+
+// Solution for sortCaseSensitive
+function sortCaseSensitive(arr) {
+  return [...arr].sort();
+}
+
+// Solution for makeTheString
+function makeTheString(arr, separator) {
+  return arr.join(separator);
+}
+
+// Solution for reverseTheArray
+function reverseTheArray(arr) {
+  return [...arr].reverse();
+}
+
+// Solution for makeMirrorArray
+function makeMirrorArray(arr) {
+  return [...arr, ...arr.slice(0, -1).reverse()];
+}
+
+// Solution for dropRight
+function dropRight(arr, count) {
+  return [...arr].slice(0, -count);
+}
+
+// Solution for dropLeft
+function dropLeft(arr, count) {
+  return [...arr].slice(count);
+}
+
+// Solution for checkArrayForValue
+function checkArrayForValue(arr, value) {
+  return arr.includes(value);
+}
 
 test('addUpArrayElements', () => {
   expect(addUpArrayElements([1, 2, 3, 4, 5])).toBe(15);

@@ -1,10 +1,29 @@
 /* eslint-disable no-undef */
-const {
-  getAbsoluteSum,
-  removeStrings,
-  findMinMax,
-  getTelNo,
-} = require('../src/arrays-04');
+
+require('../src/arrays-04');
+// Solution for getAbsoluteSum
+function getAbsoluteSum(arr) {
+  return arr.reduce((sum, num) => sum + Math.abs(num), 0);
+}
+
+// Solution for removeStrings
+function removeStrings(arr) {
+  return arr.filter((item) => typeof item !== 'string');
+}
+
+// Solution for findMinMax
+function findMinMax(arr) {
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  return [min, max];
+}
+
+// Solution for getTelNo
+function getTelNo(arr) {
+  const formattedArr = arr.slice(0, 10); // Take the first 10 digits
+  const [a, b, c, d, e, f, g, h, i, j] = formattedArr;
+  return `(${a}${b}${c}) ${d}${e}${f}-${g}${h}${i}${j}`;
+}
 
 test('getAbsoluteSum', () => {
   expect(getAbsoluteSum([1, 2, 3])).toBe(6);

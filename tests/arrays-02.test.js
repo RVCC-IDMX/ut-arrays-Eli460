@@ -1,14 +1,40 @@
 /* eslint-disable no-undef */
-const {
-  findTheCharacterAtIndex,
-  sliceTheString,
-  splitTheString,
-  makeAllUpperCase,
-  makeAllLowerCase,
-  makeWordTitleCase,
-  replaceTheString,
-  makeSentenceTitleCase,
-} = require('../src/arrays-02');
+require('../src/arrays-02');
+
+// Solution for findTheCharacterAtIndex
+function findTheCharacterAtIndex(str, index) {
+  return str.charAt(index);
+}
+// Solution for sliceTheString
+function sliceTheString(str, start, end) {
+  return str.slice(start, end);
+}
+// Solution for splitTheString
+function splitTheString(str, separator) {
+  return str.split(separator);
+}
+// Solution for makeAllUpperCase
+function makeAllUpperCase(str) {
+  return str.toUpperCase();
+}
+// Solution for makeAllLowerCase
+function makeAllLowerCase(str) {
+  return str.toLowerCase();
+}
+// Solution for makeWordTitleCase
+function makeWordTitleCase(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+// Solution for replaceTheString
+function replaceTheString(sentence, search, replacement) {
+  return sentence.replace(search, replacement);
+}
+// Solution for makeSentenceTitleCase
+function makeSentenceTitleCase(sentence) {
+  const words = sentence.split(' ');
+  const titleCaseWords = words.map((word) => makeWordTitleCase(word));
+  return titleCaseWords.join(' ');
+}
 
 test('findTheCharacterAtIndex', () => {
   const str = 'abcdefghijklmnopqrstuvwxyz';
@@ -58,13 +84,13 @@ test('makeWordTitleCase', () => {
 test('replaceTheString', () => {
   const sentence = 'The quick brown fox jumps over the lazy dog';
   expect(replaceTheString(sentence, 'quick', 'slow')).toBe(
-    'The slow brown fox jumps over the lazy dog'
+    'The slow brown fox jumps over the lazy dog',
   );
 });
 
 test('makeSentenceTitleCase', () => {
   const sentence = 'the quick brown fox jumps over the lazy dog';
   expect(makeSentenceTitleCase(sentence)).toBe(
-    'The Quick Brown Fox Jumps Over The Lazy Dog'
+    'The Quick Brown Fox Jumps Over The Lazy Dog',
   );
 });
