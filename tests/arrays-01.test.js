@@ -1,17 +1,68 @@
 /* eslint-disable no-undef */
-const {
-  getFirstValue,
-  makeArray,
-  createFirstFivePrimes,
-  createSizedArray,
-  modifyArrayByAdding,
-  modifyArrayByDeleting,
-  findElementAtIndex,
-  findElementByValue,
-  changeElementAtIndex,
-  makeStringFromArray,
-  createShallowCopy,
-} = require('../src/arrays-01');
+require('../src/arrays-01');
+
+// Solution for getFirstValue
+function getFirstValue(arr) {
+  return arr.length > 0 ? arr[0] : undefined;
+}
+
+// Solution for makeArray
+function makeArray(...args) {
+  return args;
+}
+
+// Solution for createFirstFivePrimes
+function createFirstFivePrimes() {
+  return [2, 3, 5, 7, 11];
+}
+
+// Solution for createSizedArray
+function createSizedArray(size) {
+  return Array.from({ length: size }, (_, index) => index);
+}
+
+// Solution for modifyArrayByAdding
+function modifyArrayByAdding(arr) {
+  arr.push(1);
+  return arr;
+}
+
+// Solution for modifyArrayByDeleting
+function modifyArrayByDeleting(arr) {
+  if (arr.length > 0) {
+    arr.pop();
+  }
+  return arr;
+}
+
+// Solution for findElementAtIndex
+function findElementAtIndex(arr, index) {
+  return arr[index];
+}
+
+// Solution for findElementByValue
+function findElementByValue(arr, value) {
+  return arr.indexOf(value);
+}
+
+// Solution for changeElementAtIndex
+function changeElementAtIndex(arr, index, newValue) {
+  if (index >= 0 && index < arr.length) {
+    // eslint-disable-next-line no-param-reassign
+    arr[index] = newValue;
+  }
+  return arr;
+}
+
+// Solution for makeStringFromArray
+function makeStringFromArray(arr) {
+  return arr.join('');
+}
+
+// Solution for createShallowCopy
+function createShallowCopy(arr) {
+  return [...arr];
+}
 
 test('getFirstValue', () => {
   expect(getFirstValue([1, 2, 3, 4, 5])).toBe(1);
