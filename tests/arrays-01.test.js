@@ -23,6 +23,7 @@ function createSizedArray(size) {
 
 // Solution for modifyArrayByAdding
 function modifyArrayByAdding(arr) {
+  arr.unshift(1);
   arr.push(1);
   return arr;
 }
@@ -30,7 +31,7 @@ function modifyArrayByAdding(arr) {
 // Solution for modifyArrayByDeleting
 function modifyArrayByDeleting(arr) {
   if (arr.length > 0) {
-    arr.pop();
+    arr.splice(0, 1); // Remove the first element using splice
   }
   return arr;
 }
